@@ -1,0 +1,12 @@
+[
+	{
+		"plan": "gold",
+		"coverage": 25000,
+		"primium": 300
+		},
+	{
+		"plan": "platinum",
+		"coverage": 50000,
+		"primium":500
+	}
+]

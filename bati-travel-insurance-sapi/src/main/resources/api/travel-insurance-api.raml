@@ -1,0 +1,79 @@
+#%RAML 1.0
+title: Travel Insurance ApI
+version: v1
+uses:
+  datatypes: library/library.raml
+
+/quotes:
+  get:
+    queryParameters:
+      age:
+        type: number
+        description: age of the person
+        required: true
+        minimum: 1
+        maximum: 80
+        example: 30
+      destination:
+        type: string
+        description: destnation place
+        required: true
+        enum: ["Asia","Europe"]
+      tripStartDate:
+        type: string
+        description: trip start date
+        required: true
+        example: "2020-11-02"
+      tripEndDate:
+        type: string
+        description: trip end date
+        required: true
+        example: "2020-12-15"
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include ./examples/getQuoteResponse.json
+      500:
+        body:
+          application/json:
+            example: !include ./examples/errorResponse.json
+/policy:
+    post:
+      body:
+        application/json:
+          type: datatypes.createPolicyType1 
+      responses:
+        201:
+          body:
+            application/json:
+              example: !include ./examples/createPolicyResponse.json
+        500:
+         body:
+          application/json:
+           example: !include ./examples/errorResponse.json 
+    /{policyID}: 
+    delete:
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include ./examples/deletePolicyResponse.json
+        500:
+         body:
+          application/json:
+            example: !include ./examples/errorResponse.json             
+/extendPolicy:
+    put:
+      body:
+        application/json:
+          type: datatypes.extendPolicyType 
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include ./examples/extendPolicyResponse.json
+        500:
+         body:
+          application/json:
+            example: !include ./examples/errorResponse.json

@@ -1,0 +1,25 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  policyID:
+    type: string
+    description: policy id
+    required: true
+    maxLength: 10
+    example: "123"
+  newTripEndDate:
+    type: string
+    description: new trip date in yyyy-mm-dd format
+    required: true
+    example: "2020-12-31"
+  addtionalPremium:
+    type: number
+    description: additional preimum
+    required: true
+    example: 150
+  extendDate:
+    type: string
+    description: date for existing policy
+    required: true
+    example: "2020-12-31"

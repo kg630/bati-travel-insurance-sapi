@@ -1,0 +1,27 @@
+{
+
+   "personalDetails": 
+   {
+		"name": "bati",
+     	"dateofBirth": "2020-10-14",
+     	"address": "USA"
+	},
+	"trip": 
+	{
+		"destnation": "Asia",
+		"tripStartDate":  "2020-11-02",
+		"tripEndDtae": "2020-12-20"
+	
+	},
+	"plan": 
+	{
+		"planName":"gold",
+		"premium": 300,
+		"coverage": 25000
+	},
+	"purchaseDate": "2020-11-11"	
+
+}
+
+
+  

@@ -1,0 +1,67 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+   personalDetails:
+    type: object
+    properties:
+      name:
+        type: string
+        description: name of the person
+        required: true
+        maxLength: 40
+        example: "bati"
+      dateofBirth:
+        type: string
+        description: birth date in yyy-mm-dd
+        required: true
+        maxLength: 10
+        example: "2020-11-14"
+      address:
+        type: string
+        description: address
+        required: true
+        maxLength: 200
+        example: "USA"
+   trip:
+    type: object
+    properties:
+      destnation:
+        type: string
+        description: destnation place
+        required: true
+        enum: ["Asia","Europe"]
+      tripStartDate:
+        type: string
+        description: trip start date
+        required: true
+        example: "2020-11-02"
+      tripEndDtae:
+        type: string
+        description: trip end date
+        required: true
+        example: "2020-12-15"
+   plan:
+    type: object
+    properties:
+       planName:
+        type: string
+        description: name of the plan
+        required: true
+        maxLength: 40
+        example: "gold"
+       premium:
+        type: number
+        description: premium paid purchace policy
+        required: true
+        example: 300
+       coverage:
+        type: number
+        description: coverage provided for this plan
+        required: true
+        example: 25000
+   purchaseDate:
+        type: string
+        description: date of purchasing policy in yyyy-mm-dd format
+        required: true
+        example: "2020-11-01"   
